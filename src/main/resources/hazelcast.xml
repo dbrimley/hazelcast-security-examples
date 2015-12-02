@@ -15,9 +15,11 @@
   ~ limitations under the License.
   -->
 
-<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.2.xsd"
+<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.6.xsd"
            xmlns="http://www.hazelcast.com/schema/config"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <license-key>NEGKBLFMDHJ946W1U01411Q06100Q8</license-key>
 
 
     <network>
@@ -34,7 +36,7 @@
 
     <security enabled="true">
         <client-login-modules>
-            <login-module class-name="com.craftedbytes.hazelcast.security.ClientLoginModule" usage="required">
+            <login-module class-name="com.craftedbytes.hazelcast.security.ClientLoginModule" usage="REQUIRED">
                 <properties>
                     <property name="lookupFilePath">value3</property>
                 </properties>

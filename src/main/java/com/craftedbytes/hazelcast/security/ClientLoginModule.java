@@ -53,7 +53,6 @@ public class ClientLoginModule implements LoginModule  {
 
     }
 
-    @Override
     public void initialize(Subject subject, CallbackHandler callbackHandler, Map<String, ?> sharedState, Map<String, ?> options) {
         this.subject = subject;
         this.callbackHandler = callbackHandler;
@@ -67,7 +66,6 @@ public class ClientLoginModule implements LoginModule  {
      * @return is login successful
      * @throws LoginException
      */
-    @Override
     public boolean login() throws LoginException {
         boolean loginOk = false;
 
@@ -176,28 +174,23 @@ public class ClientLoginModule implements LoginModule  {
             this.userGroup = userGroup;
         }
 
-        @Override
         public String getEndpoint() {
             return this.endpoint;
         }
 
-        @Override
         public void setEndpoint(String endpoint) {
             this.endpoint = endpoint;
         }
 
-        @Override
         public String getPrincipal() {
             return this.userGroup;
         }
 
-        @Override
         public void writeData(ObjectDataOutput objectDataOutput) throws IOException {
             objectDataOutput.writeUTF(endpoint);
             objectDataOutput.writeUTF(userGroup);
         }
 
-        @Override
         public void readData(ObjectDataInput objectDataInput) throws IOException {
             this.endpoint = objectDataInput.readUTF();
             this.userGroup = objectDataInput.readUTF();
